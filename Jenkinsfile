@@ -2,14 +2,10 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "rahulraj41/tourism-app"
+        IMAGE_NAME = "tourism-app"
         TAG = "latest"
         CONTAINER_NAME = "tourism-container"
     }
-
-//     tools {
-//         jdk 'Java21'
-//     }
 
     stages {
 
@@ -30,9 +26,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh '''
-                docker build -t $IMAGE_NAME:$TAG .
-                '''
+                sh 'docker build -t $IMAGE_NAME:$TAG .'
             }
         }
 
