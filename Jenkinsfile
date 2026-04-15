@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools{
+    jdk 'Java21'
+    }
     environment {
         IMAGE_NAME = "tourism-app"
         TAG = "latest"
