@@ -1,9 +1,13 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 
+# Set working directory
 WORKDIR /app
 
-COPY build/libs/*.jar app.jar
+# Copy jar from build
+COPY build/libs/tourism-app-*.jar app.jar
 
+# Expose application port
 EXPOSE 8082
 
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+# Run application
+ENTRYPOINT ["java","-jar","app.jar"]

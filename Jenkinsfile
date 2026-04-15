@@ -7,9 +7,9 @@ pipeline {
         CONTAINER_NAME = "tourism-container"
     }
 
-    tools {
-        jdk 'Java17'
-    }
+//     tools {
+//         jdk 'Java21'
+//     }
 
     stages {
 
