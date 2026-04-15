@@ -28,15 +28,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME:$TAG .'
+                sh 'docker build --no-cache -t tourism-app:latest .'
             }
         }
 
         stage('Run Container') {
             steps {
                 sh '''
-                docker rm -f $CONTAINER_NAME || true
-                docker run -d -p 8082:8082 --name $CONTAINER_NAME $IMAGE_NAME:$TAG
+                docker rm -f tourism-container || true
+                docker run -d -p 8082:8082 --name tourism-container tourism-app:latest
                 '''
             }
         }
