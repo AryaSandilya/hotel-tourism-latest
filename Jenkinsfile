@@ -3,7 +3,7 @@ agent any
 stages{
 stage('Checkout'){
 steps{
-git  'https://github.com/AryaSandilya/hotel-tourism-latest.git'
+        git branch: 'main', url: 'https://github.com/AryaSandilya/hotel-tourism-latest.git'
 }
 }
 
