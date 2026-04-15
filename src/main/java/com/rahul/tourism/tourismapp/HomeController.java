@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "🌍 Welcome to Rahul Spring Boot Tourism App 🚀";
+        return "🌍 Welcome to Rahul Spring Boot Tourism App || The whole New World!! 🚀";
     }
 }
