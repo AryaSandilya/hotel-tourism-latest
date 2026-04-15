@@ -1,18 +1,19 @@
-pipeline{
-agent any
-environment {
-        // Force the build to use the container's pre-installed Java 21
-        JAVA_HOME = "/opt/java/openjdk"
-        PATH = "${JAVA_HOME}/bin:${PATH}"
-    }
-stages{
-stage('Checkout'){
-steps{
-        git branch: 'main', url: 'https://github.com/AryaSandilya/hotel-tourism-latest.git'
-}
-}
+pipeline {
+    agent any
 
-stage('Build') {
+    tools {
+        // This must match the name you gave in Manage Jenkins -> Tools
+        jdk 'Java17'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/AryaSandilya/hotel-tourism-latest.git'
+            }
+        }
+
+        stage('Build') {
             steps {
                 sh '''
                 chmod +x gradlew
@@ -20,8 +21,5 @@ stage('Build') {
                 '''
             }
         }
-}
-
-
-
+    }
 }
