@@ -9,7 +9,7 @@ git  'https://github.com/AryaSandilya/hotel-tourism-latest.git'
 
 stage('Build'){
 steps{
-sh  'mvn clean package'
+sh  '.\gradlew.bat build'
 }
 
 }
