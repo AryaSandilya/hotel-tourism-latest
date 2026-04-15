@@ -7,12 +7,14 @@ git  'https://github.com/AryaSandilya/hotel-tourism-latest.git'
 }
 }
 
-stage('Build'){
-steps{
-sh  '.\gradlew.bat build'
-}
-
-}
+stage('Build') {
+            steps {
+                sh '''
+                chmod +x gradlew
+                ./gradlew build
+                '''
+            }
+        }
 }
 
 
