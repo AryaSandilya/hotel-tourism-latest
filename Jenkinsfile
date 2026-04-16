@@ -50,6 +50,7 @@ pipeline {
                 sed -i "s|image:.*|image: $IMAGE_NAME:$TAG|g" k8s/deployment.yaml
                 kubectl apply -f k8s/deployment.yaml
                 kubectl apply -f k8s/service.yaml
+                kubectl apply -f k8s/ingress.yaml
                 kubectl rollout restart deployment tourism-deployment
                 '''
             }

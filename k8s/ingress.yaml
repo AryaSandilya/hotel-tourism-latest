@@ -4,8 +4,7 @@ metadata:
   name: tourism-ingress
 spec:
   rules:
-    - host: tourism.local
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
