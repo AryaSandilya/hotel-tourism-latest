@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tourism-container
-          image: tourism-app:latest
+          image: rahulraj41/tourism-app:1
           imagePullPolicy: Never
           ports:
             - containerPort: 8082

@@ -47,9 +47,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh '''
-                sed -i "s|image:.*|image: $IMAGE_NAME:$TAG|g" deployment.yaml
-                kubectl apply -f deployment.yaml
-                kubectl apply -f service.yaml
+                sed -i "s|image:.*|image: $IMAGE_NAME:$TAG|g" k8s/deployment.yaml
+                kubectl apply -f k8s/deployment.yaml
+                kubectl apply -f k8s/service.yaml
+                kubectl rollout restart deployment tourism-deployment
                 '''
             }
         }
