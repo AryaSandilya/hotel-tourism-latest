@@ -9,6 +9,6 @@ public class HomeController {
     @GetMapping("/")
     public String home() {
       //  return "🌍 Welcome to Rahul Spring Boot Tourism App || The whole New World!! || The Real New World🚀";
-    return "=============Nothing=================="
+    return "=============Nothing==================";
     }
 }
